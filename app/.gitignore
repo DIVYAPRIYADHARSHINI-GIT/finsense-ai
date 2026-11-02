@@ -36,3 +36,4 @@ finsense-transactions-*.csv
 .vscode/*
 !.vscode/extensions.json
 *.swp
+.vercel

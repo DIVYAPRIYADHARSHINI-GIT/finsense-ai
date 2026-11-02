@@ -7,6 +7,9 @@ scikit-learn runs inside your browser through Pyodide (CPython 3.14 compiled to
 WebAssembly) in a Web Worker. No server, no paid API, no cloud database, no
 account, no tracking. Every transaction stays in your own browser's IndexedDB.
 
+**Live app:** https://finsense-ai-rho.vercel.app
+**Repository:** https://github.com/DIVYAPRIYADHARSHINI-GIT/finsense-ai
+
 **Project folder:** `/Users/softage/Designer Projects/starter/finsense-ai`
 **App folder:** `/Users/softage/Designer Projects/starter/finsense-ai/app`
 
@@ -86,11 +89,12 @@ All four suites were executed; these are real counts, not estimates.
 | Unit / integration (Vitest) | `npm test` | **106 passed, 0 failed** |
 | ML model tests (real Python) | `npm run test:ml` | **77 passed, 0 failed** |
 | End-to-end (headless Chrome) | `npm run test:e2e` | **101 passed, 0 failed** |
+| **Live deployment** | `npm run test:live` | **29 passed, 0 failed** |
 | Lint (oxlint) | `npm run lint` | 0 errors, 13 warnings |
 | Typecheck (tsc) | `npx tsc -b` | clean |
 | Production build | `npm run build` | **success**, 874 kB JS (251 kB gzip) |
 
-**Total: 284 automated checks passing.** The E2E suite runs against the real
+**Total: 313 automated checks passing.** The E2E suite runs against the real
 production build served as a static host serves it, and **fails on any console
 error** — the final run had zero.
 
@@ -169,6 +173,7 @@ npm run dev          # http://localhost:5173
 | `npm test` | 106 unit / integration tests |
 | `npm run test:ml` | 77 ML tests against real scikit-learn |
 | `npm run test:e2e` | 101 headless-Chrome checks (needs `npm run build` first) |
+| `npm run test:live` | 29 checks against the deployed production URL |
 | `npm run test:all` | Lint → unit → ML → build → E2E |
 | `npm run ml:evaluate` | Regenerate `docs/ml-evaluation.json` |
 | `npm run lint` | oxlint |
@@ -327,8 +332,8 @@ upload**. Your transactions have no network path out of the browser.
 | Item | Status |
 | --- | --- |
 | Paid APIs / LLMs | **None** |
-| Paid hosting / database / storage / auth | **None** |
-| External resources created | **None** |
+| Paid hosting / database / storage / auth | **None** - Vercel Hobby is the free tier |
+| External resources created | 1 free GitHub repo + 1 Vercel Hobby project (both approved) |
 | Accounts upgraded | **None** |
 | Billing enabled | **No** |
 | Credit card required | **No** |
@@ -344,29 +349,36 @@ all this app needs.
 
 ## 10. Deployment
 
-Not deployed — **no external resources were created, as instructed.** The build
-is verified and ready. When you want it live:
+**Live:** https://finsense-ai-rho.vercel.app
+**Repo:** https://github.com/DIVYAPRIYADHARSHINI-GIT/finsense-ai
+
+| Item | Value |
+| --- | --- |
+| Hosting provider | Vercel |
+| Plan | **Hobby (free)** |
+| Project name | `finsense-ai` |
+| Vercel account | `divyapriyadharshini-git` |
+| GitHub account | `DIVYAPRIYADHARSHINI-GIT` |
+| Repo visibility | Public |
+| Auto-deploy | Connected - every push to `main` deploys to production |
+| Billing enabled | **No** |
+| Credit card on file | **No** |
+| Environment variables | **None** |
+| Serverless functions | **None** (pure static output) |
+
+The deployment was verified by `npm run test:live`, which drives the real
+production URL in headless Chrome: **29/29 checks passed**, including Pyodide
+booting and scikit-learn genuinely training a model in the deployed browser, all
+nine routes rendering, deep-link refresh, mobile/tablet layout, and zero console
+errors. That suite also asserts the only external hosts the client contacts are
+jsDelivr (Pyodide wheels) and Google Fonts - both free CDNs.
+
+To redeploy manually:
 
 ```bash
-# 1. GitHub (checks auth first; it will tell you if you need to log in)
-cd "/Users/softage/Designer Projects/starter/finsense-ai"
-gh auth status
-gh repo create finsense-ai --public --source=. --remote=origin --push
-
-# 2a. Vercel Hobby (free)
-cd app && npx vercel login && npx vercel --prod
-
-# 2b. or GitHub Pages (free)
-cd app && npm run build:pages    # then publish dist/ to the gh-pages branch
+cd "/Users/softage/Designer Projects/starter/finsense-ai/app"
+vercel --prod            # or just: git push (auto-deploys)
 ```
-
-A git repository is initialised locally with the requested identity
-(Divya Priyadharshini / divyapriyadharshini@softage.ai) and a `.gitignore` that
-excludes `node_modules`, build output, caches, and — deliberately — any
-`finsense-backup-*.json`, exported transaction CSV or bank statement, so
-personal financial data cannot be committed by accident.
-
----
 
 ## 11. Known limitations
 

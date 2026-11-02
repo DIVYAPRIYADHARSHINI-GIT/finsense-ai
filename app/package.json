@@ -14,7 +14,8 @@
     "test:ml": "node scripts/ml-tests.mjs",
     "test:e2e": "node scripts/e2e.mjs",
     "test:all": "npm run lint && npm run test && npm run test:ml && npm run build && npm run test:e2e",
-    "ml:evaluate": "node scripts/evaluate-ml.mjs"
+    "ml:evaluate": "node scripts/evaluate-ml.mjs",
+    "test:live": "node scripts/live-check.mjs"
   },
   "dependencies": {
     "idb": "^8.0.4",
