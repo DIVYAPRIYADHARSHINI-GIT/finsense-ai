@@ -1,0 +1,38 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+*.local
+
+# caches
+.pyodide-cache/
+.vite/
+*.tsbuildinfo
+
+# test scratch - never commit imported statements or exported reports,
+# they may contain real personal financial data
+.e2e-import.csv
+.e2e-downloads/
+.ml-eval-dataset.mjs
+.mltest-dataset.mjs
+*.e2e.csv
+
+# personal financial data must never be published
+*.statement.csv
+*.bank.csv
+finsense-backup-*.json
+finsense-transactions-*.csv
+
+# env / secrets (this app needs none, but never commit one by accident)
+.env
+.env.*
+!.env.example
+
+# editor / OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp

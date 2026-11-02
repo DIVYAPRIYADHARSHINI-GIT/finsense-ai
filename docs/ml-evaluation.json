@@ -1,0 +1,1072 @@
+{
+  "runtime": {
+    "python": "3.14.2",
+    "numpy": "2.4.6",
+    "pandas": "3.0.2",
+    "sklearn": "1.8.0",
+    "seed": 42
+  },
+  "dataset": {
+    "transactions": 745,
+    "months": 12
+  },
+  "classification": {
+    "ok": true,
+    "bestModel": "Random Forest",
+    "comparison": [
+      {
+        "model": "Logistic Regression",
+        "cvAccuracy": 0.9701986754966887,
+        "cvStd": 0.009933774834437081,
+        "testAccuracy": 0.99,
+        "macroF1": 0.9638095238095238
+      },
+      {
+        "model": "Random Forest",
+        "cvAccuracy": 0.9668874172185431,
+        "cvStd": 0.006622516556291369,
+        "testAccuracy": 0.99,
+        "macroF1": 0.9956935817805384
+      },
+      {
+        "model": "Multinomial Naive Bayes",
+        "cvAccuracy": 0.9536423841059603,
+        "cvStd": 0.013245033112582794,
+        "testAccuracy": 0.98,
+        "macroF1": 0.8942857142857144
+      }
+    ],
+    "testAccuracy": 0.99,
+    "macroF1": 0.9956935817805384,
+    "trainSize": 304,
+    "testSize": 100,
+    "totalSamples": 404,
+    "classes": [
+      "Education",
+      "Entertainment",
+      "Food & Dining",
+      "Groceries",
+      "Healthcare",
+      "Investments",
+      "Other",
+      "Rent",
+      "Salary",
+      "Shopping",
+      "Subscriptions",
+      "Transportation",
+      "Travel",
+      "Utilities"
+    ],
+    "confusionMatrix": {
+      "labels": [
+        "Education",
+        "Entertainment",
+        "Food & Dining",
+        "Groceries",
+        "Healthcare",
+        "Other",
+        "Shopping",
+        "Subscriptions",
+        "Transportation",
+        "Travel"
+      ],
+      "matrix": [
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          34,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          22,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      ]
+    },
+    "lowConfidenceThreshold": 0.55,
+    "seed": 42
+  },
+  "predictions": {
+    "ok": true,
+    "predictions": [
+      {
+        "id": "p1",
+        "category": "Groceries",
+        "confidence": 0.525,
+        "uncertain": true,
+        "runnerUp": "Food & Dining",
+        "runnerUpConfidence": 0.47
+      },
+      {
+        "id": "p2",
+        "category": "Subscriptions",
+        "confidence": 0.665,
+        "uncertain": false,
+        "runnerUp": "Utilities",
+        "runnerUpConfidence": 0.075
+      },
+      {
+        "id": "p3",
+        "category": "Rent",
+        "confidence": 0.69,
+        "uncertain": false,
+        "runnerUp": "Subscriptions",
+        "runnerUpConfidence": 0.085
+      },
+      {
+        "id": "p4",
+        "category": "Subscriptions",
+        "confidence": 0,
+        "uncertain": true,
+        "runnerUp": "Utilities",
+        "runnerUpConfidence": 0.155
+      },
+      {
+        "id": "p5",
+        "category": "Shopping",
+        "confidence": 0.34,
+        "uncertain": true,
+        "runnerUp": "Other",
+        "runnerUpConfidence": 0.12
+      }
+    ],
+    "threshold": 0.55
+  },
+  "forecast": {
+    "ok": true,
+    "bestModel": "Moving Average (baseline)",
+    "metrics": [
+      {
+        "model": "Moving Average (baseline)",
+        "mae": 18561.611111111113,
+        "rmse": 19484.21124578489,
+        "mape": 18.60339493349511,
+        "folds": 6
+      },
+      {
+        "model": "Random Forest Regressor",
+        "mae": 20045.228333333336,
+        "rmse": 23625.022759567993,
+        "mape": 19.147264473577128,
+        "folds": 6
+      },
+      {
+        "model": "Linear Regression",
+        "mae": 35577.42381637378,
+        "rmse": 45484.32516054417,
+        "mape": 32.24592474952565,
+        "folds": 6
+      }
+    ],
+    "baselineMae": 18561.611111111113,
+    "improvementVsBaseline": 0,
+    "nextMonth": "2025-11",
+    "nextMonthPrediction": 101156,
+    "lower": 64650.228766092005,
+    "upper": 137661.771233908,
+    "statsmodelsCrossCheck": 105421.96888204009,
+    "history": [
+      {
+        "month": "2024-12",
+        "actual": 80146
+      },
+      {
+        "month": "2025-01",
+        "actual": 74642
+      },
+      {
+        "month": "2025-02",
+        "actual": 130174
+      },
+      {
+        "month": "2025-03",
+        "actual": 84831
+      },
+      {
+        "month": "2025-04",
+        "actual": 82622
+      },
+      {
+        "month": "2025-05",
+        "actual": 120765
+      },
+      {
+        "month": "2025-06",
+        "actual": 81062
+      },
+      {
+        "month": "2025-07",
+        "actual": 105455
+      },
+      {
+        "month": "2025-08",
+        "actual": 78916
+      },
+      {
+        "month": "2025-09",
+        "actual": 101893
+      },
+      {
+        "month": "2025-10",
+        "actual": 122659
+      }
+    ],
+    "backtest": [
+      {
+        "month": "2025-05",
+        "actual": 120765,
+        "predicted": 99209
+      },
+      {
+        "month": "2025-06",
+        "actual": 81062,
+        "predicted": 96072.66666666667
+      },
+      {
+        "month": "2025-07",
+        "actual": 105455,
+        "predicted": 94816.33333333333
+      },
+      {
+        "month": "2025-08",
+        "actual": 78916,
+        "predicted": 102427.33333333333
+      },
+      {
+        "month": "2025-09",
+        "actual": 101893,
+        "predicted": 88477.66666666667
+      },
+      {
+        "month": "2025-10",
+        "actual": 122659,
+        "predicted": 95421.33333333333
+      }
+    ],
+    "categoryForecast": [
+      {
+        "category": "Rent",
+        "predicted": 23778.30844656593,
+        "lastMonth": 24000,
+        "average3m": 24000,
+        "trendPerMonth": 1.112451408926337e-12
+      },
+      {
+        "category": "Other",
+        "predicted": 16485.693393951206,
+        "lastMonth": 31450,
+        "average3m": 16116.666666666666,
+        "trendPerMonth": 1045.4545454545455
+      },
+      {
+        "category": "Groceries",
+        "predicted": 11812.679340359868,
+        "lastMonth": 14848,
+        "average3m": 11759.666666666666,
+        "trendPerMonth": 326.2909090909093
+      },
+      {
+        "category": "Travel",
+        "predicted": 10021.455161843714,
+        "lastMonth": 1508,
+        "average3m": 9739.333333333334,
+        "trendPerMonth": 751.1090909090905
+      },
+      {
+        "category": "Shopping",
+        "predicted": 9325.180054928509,
+        "lastMonth": 18234,
+        "average3m": 9759.666666666666,
+        "trendPerMonth": -695.0909090909083
+      },
+      {
+        "category": "Investments",
+        "predicted": 5944.577111641483,
+        "lastMonth": 6000,
+        "average3m": 6000,
+        "trendPerMonth": 2.7811285223158425e-13
+      },
+      {
+        "category": "Food & Dining",
+        "predicted": 5772.786338894226,
+        "lastMonth": 7775,
+        "average3m": 5739.666666666667,
+        "trendPerMonth": 173.88181818181818
+      },
+      {
+        "category": "Transportation",
+        "predicted": 5724.536188004735,
+        "lastMonth": 7481,
+        "average3m": 5741.666666666667,
+        "trendPerMonth": 72.48181818181817
+      },
+      {
+        "category": "Healthcare",
+        "predicted": 3681.5456584080384,
+        "lastMonth": 2788,
+        "average3m": 3597.3333333333335,
+        "trendPerMonth": 237.07272727272738
+      },
+      {
+        "category": "Utilities",
+        "predicted": 3086.7351756223666,
+        "lastMonth": 3363,
+        "average3m": 3123,
+        "trendPerMonth": -14.97272727272713
+      },
+      {
+        "category": "Subscriptions",
+        "predicted": 2305.5051564649552,
+        "lastMonth": 2327,
+        "average3m": 2327,
+        "trendPerMonth": -9.270428407719474e-14
+      },
+      {
+        "category": "Education",
+        "predicted": 1636.4234875238346,
+        "lastMonth": 1113,
+        "average3m": 1670.6666666666667,
+        "trendPerMonth": -37.97272727272733
+      },
+      {
+        "category": "Entertainment",
+        "predicted": 1580.57448579113,
+        "lastMonth": 1772,
+        "average3m": 1581.3333333333333,
+        "trendPerMonth": 27.95454545454546
+      }
+    ],
+    "dailyForecast": [
+      {
+        "date": "2025-11-03",
+        "predicted": 3584.013688407842,
+        "lower": 2367.1546472775754,
+        "upper": 4800.872729538109
+      },
+      {
+        "date": "2025-11-04",
+        "predicted": 3926.5986663706444,
+        "lower": 2709.739625240378,
+        "upper": 5143.457707500911
+      },
+      {
+        "date": "2025-11-05",
+        "predicted": 2343.3628593587105,
+        "lower": 1126.503818228444,
+        "upper": 3560.2219004889766
+      },
+      {
+        "date": "2025-11-06",
+        "predicted": 3624.9296182590447,
+        "lower": 2408.0705771287785,
+        "upper": 4841.788659389311
+      },
+      {
+        "date": "2025-11-07",
+        "predicted": 3786.1095522203113,
+        "lower": 2569.2505110900447,
+        "upper": 5002.968593350578
+      },
+      {
+        "date": "2025-11-08",
+        "predicted": 3577.560281585783,
+        "lower": 2360.701240455516,
+        "upper": 4794.4193227160495
+      },
+      {
+        "date": "2025-11-09",
+        "predicted": 2772.969034468459,
+        "lower": 1556.1099933381927,
+        "upper": 3989.8280755987253
+      },
+      {
+        "date": "2025-11-10",
+        "predicted": 3584.013688407842,
+        "lower": 2367.1546472775754,
+        "upper": 4800.872729538109
+      },
+      {
+        "date": "2025-11-11",
+        "predicted": 3926.5986663706444,
+        "lower": 2709.739625240378,
+        "upper": 5143.457707500911
+      },
+      {
+        "date": "2025-11-12",
+        "predicted": 2343.3628593587105,
+        "lower": 1126.503818228444,
+        "upper": 3560.2219004889766
+      },
+      {
+        "date": "2025-11-13",
+        "predicted": 3624.9296182590447,
+        "lower": 2408.0705771287785,
+        "upper": 4841.788659389311
+      },
+      {
+        "date": "2025-11-14",
+        "predicted": 3786.1095522203113,
+        "lower": 2569.2505110900447,
+        "upper": 5002.968593350578
+      },
+      {
+        "date": "2025-11-15",
+        "predicted": 3577.560281585783,
+        "lower": 2360.701240455516,
+        "upper": 4794.4193227160495
+      },
+      {
+        "date": "2025-11-16",
+        "predicted": 2772.969034468459,
+        "lower": 1556.1099933381927,
+        "upper": 3989.8280755987253
+      },
+      {
+        "date": "2025-11-17",
+        "predicted": 3584.013688407842,
+        "lower": 2367.1546472775754,
+        "upper": 4800.872729538109
+      },
+      {
+        "date": "2025-11-18",
+        "predicted": 3926.5986663706444,
+        "lower": 2709.739625240378,
+        "upper": 5143.457707500911
+      },
+      {
+        "date": "2025-11-19",
+        "predicted": 2343.3628593587105,
+        "lower": 1126.503818228444,
+        "upper": 3560.2219004889766
+      },
+      {
+        "date": "2025-11-20",
+        "predicted": 3624.9296182590447,
+        "lower": 2408.0705771287785,
+        "upper": 4841.788659389311
+      },
+      {
+        "date": "2025-11-21",
+        "predicted": 3786.1095522203113,
+        "lower": 2569.2505110900447,
+        "upper": 5002.968593350578
+      },
+      {
+        "date": "2025-11-22",
+        "predicted": 3577.560281585783,
+        "lower": 2360.701240455516,
+        "upper": 4794.4193227160495
+      },
+      {
+        "date": "2025-11-23",
+        "predicted": 2772.969034468459,
+        "lower": 1556.1099933381927,
+        "upper": 3989.8280755987253
+      },
+      {
+        "date": "2025-11-24",
+        "predicted": 3584.013688407842,
+        "lower": 2367.1546472775754,
+        "upper": 4800.872729538109
+      },
+      {
+        "date": "2025-11-25",
+        "predicted": 3926.5986663706444,
+        "lower": 2709.739625240378,
+        "upper": 5143.457707500911
+      },
+      {
+        "date": "2025-11-26",
+        "predicted": 2343.3628593587105,
+        "lower": 1126.503818228444,
+        "upper": 3560.2219004889766
+      },
+      {
+        "date": "2025-11-27",
+        "predicted": 3624.9296182590447,
+        "lower": 2408.0705771287785,
+        "upper": 4841.788659389311
+      },
+      {
+        "date": "2025-11-28",
+        "predicted": 3786.1095522203113,
+        "lower": 2569.2505110900447,
+        "upper": 5002.968593350578
+      },
+      {
+        "date": "2025-11-29",
+        "predicted": 3577.560281585783,
+        "lower": 2360.701240455516,
+        "upper": 4794.4193227160495
+      },
+      {
+        "date": "2025-11-30",
+        "predicted": 2772.969034468459,
+        "lower": 1556.1099933381927,
+        "upper": 3989.8280755987253
+      },
+      {
+        "date": "2025-12-01",
+        "predicted": 3584.013688407842,
+        "lower": 2367.1546472775754,
+        "upper": 4800.872729538109
+      },
+      {
+        "date": "2025-12-02",
+        "predicted": 3926.5986663706444,
+        "lower": 2709.739625240378,
+        "upper": 5143.457707500911
+      }
+    ],
+    "highExpenseDays": [
+      {
+        "dayOfMonth": 3,
+        "averageSpend": 25444.363636363636
+      },
+      {
+        "dayOfMonth": 7,
+        "averageSpend": 9461.363636363636
+      },
+      {
+        "dayOfMonth": 5,
+        "averageSpend": 6551.818181818182
+      },
+      {
+        "dayOfMonth": 22,
+        "averageSpend": 6040.272727272727
+      },
+      {
+        "dayOfMonth": 18,
+        "averageSpend": 5136.818181818182
+      }
+    ],
+    "expectedIncome": 106979.33333333333,
+    "expectedSavings": 5823.3333333333285,
+    "monthsUsed": 11,
+    "seed": 42
+  },
+  "shortForecast": {
+    "ok": false,
+    "needsMoreData": true,
+    "monthsAvailable": 1,
+    "monthsRequired": 4,
+    "message": "Forecasting needs at least 4 complete months of history; you have 1. Keep adding transactions - the forecast unlocks automatically."
+  },
+  "anomalies": {
+    "ok": true,
+    "model": "Isolation Forest",
+    "contamination": 0.04,
+    "analysed": 725,
+    "flagged": 29,
+    "anomalies": [
+      {
+        "id": "sample-ki-2uv1w9",
+        "date": "2025-07-11",
+        "merchant": "City Clinic Labs",
+        "description": "POS 774120 CITY CLINIC LABS PROCEDURE",
+        "category": "Healthcare",
+        "amount": 19800,
+        "score": 1,
+        "zScore": 4.168293924737559,
+        "reasons": [
+          "19800 is 4.2 standard deviations above the Healthcare average of 2391"
+        ]
+      },
+      {
+        "id": "sample-kh-7ml4c9",
+        "date": "2025-05-22",
+        "merchant": "Verdant Jewellers",
+        "description": "POS 913744 VERDANT JEWELLERS",
+        "category": "Shopping",
+        "amount": 42000,
+        "score": 0.8924242958678081,
+        "zScore": 4.143144487019051,
+        "reasons": [
+          "42000 is 4.1 standard deviations above the Shopping average of 4891",
+          "First and only transaction at this merchant"
+        ]
+      },
+      {
+        "id": "sample-kj-3jx7c9",
+        "date": "2025-09-27",
+        "merchant": "SkyFare Airways",
+        "description": "POS 664301 SKYFARE AIRWAYS INTL",
+        "category": "Travel",
+        "amount": 26400,
+        "score": 0.8480997031793505,
+        "zScore": 2.9275376888137337,
+        "reasons": [
+          "26400 is 2.9 standard deviations above the Travel average of 5309",
+          "Large weekend spend compared with your weekday pattern"
+        ]
+      },
+      {
+        "id": "sample-kg-xtbtm",
+        "date": "2025-02-18",
+        "merchant": "GadgetHub Electronics",
+        "description": "POS 884211 GADGETHUB ELECTRONICS LAPTOP",
+        "category": "Shopping",
+        "amount": 38500,
+        "score": 0.8421185235189076,
+        "zScore": 3.752379001914588,
+        "reasons": [
+          "38500 is 3.8 standard deviations above the Shopping average of 4891"
+        ]
+      },
+      {
+        "id": "sample-cj-fm3lbx",
+        "date": "2025-06-24",
+        "merchant": "SkillForge Academy",
+        "description": "POS 493880194 SKILLFORGE ACADEMY MARATHAHALLI ECOM",
+        "category": "Education",
+        "amount": 3192,
+        "score": 0.8416006783782638,
+        "zScore": 1.1762944933147497,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-eh-9rhu7g",
+        "date": "2025-07-13",
+        "merchant": "SkyFare Airways",
+        "description": "POS 451096171 SKYFARE AIRWAYS KORAMANGALA QR",
+        "category": "Travel",
+        "amount": 7952,
+        "score": 0.8201718372599268,
+        "zScore": 0.36689214702575246,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-k4-967wbr",
+        "date": "2025-10-03",
+        "merchant": "GadgetHub Electronics",
+        "description": "POS 476292712 GADGETHUB ELECTRONICS YELAHANKA TID",
+        "category": "Shopping",
+        "amount": 7686,
+        "score": 0.7928765176319517,
+        "zScore": 0.3120796710548973,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-kl-134hvl",
+        "date": "2025-10-06",
+        "merchant": "Unknown Online Merchant",
+        "description": "POS 551903 UNKNOWN ONLINE MERCHANT RETRY",
+        "category": "Other",
+        "amount": 11500,
+        "score": 0.7848569034969773,
+        "zScore": 2.2532028485964326,
+        "reasons": [
+          "11500 is 2.3 standard deviations above the Other average of 8919",
+          "Rare merchant - only 2 transactions on record"
+        ]
+      },
+      {
+        "id": "sample-kk-f1ym63",
+        "date": "2025-10-06",
+        "merchant": "Unknown Online Merchant",
+        "description": "POS 551902 UNKNOWN ONLINE MERCHANT",
+        "category": "Other",
+        "amount": 11500,
+        "score": 0.7837837841431329,
+        "zScore": 2.2532028485964326,
+        "reasons": [
+          "11500 is 2.3 standard deviations above the Other average of 8919",
+          "Rare merchant - only 2 transactions on record"
+        ]
+      },
+      {
+        "id": "sample-gq-bqjri4",
+        "date": "2025-09-15",
+        "merchant": "SafeGuard Insurance",
+        "description": "PREMIUM/SAFEGUARD INSURANCE/HEALTH",
+        "category": "Healthcare",
+        "amount": 6200,
+        "score": 0.7366569409538257,
+        "zScore": 0.911934015150664,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-b4-18eowq",
+        "date": "2025-06-15",
+        "merchant": "SafeGuard Insurance",
+        "description": "PREMIUM/SAFEGUARD INSURANCE/HEALTH",
+        "category": "Healthcare",
+        "amount": 6200,
+        "score": 0.6955294265146714,
+        "zScore": 0.911934015150664,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-k9-ea9iqv",
+        "date": "2025-10-01",
+        "merchant": "City Clinic Labs",
+        "description": "POS 495233338 CITY CLINIC LABS KORAMANGALA TID",
+        "category": "Healthcare",
+        "amount": 1340,
+        "score": 0.6787121798848297,
+        "zScore": -0.25173577606935865,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-5o-2mldj0",
+        "date": "2025-03-15",
+        "merchant": "SafeGuard Insurance",
+        "description": "PREMIUM/SAFEGUARD INSURANCE/HEALTH",
+        "category": "Healthcare",
+        "amount": 6200,
+        "score": 0.6361131859413243,
+        "zScore": 0.911934015150664,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-ei-67oe16",
+        "date": "2025-07-02",
+        "merchant": "StayEasy Hotels",
+        "description": "POS 405130892 STAYEASY HOTELS KORAMANGALA QR",
+        "category": "Travel",
+        "amount": 3976,
+        "score": 0.6134398084584738,
+        "zScore": -0.1849902615903042,
+        "reasons": [
+          "Rare merchant - only 2 transactions on record"
+        ]
+      },
+      {
+        "id": "sample-as-7o9m2m",
+        "date": "2025-05-09",
+        "merchant": "RailConnect Booking",
+        "description": "UPI/DR/491492801/RAILCONNECT BOOKING/HSR LAYOUT/ECOM",
+        "category": "Travel",
+        "amount": 1977,
+        "score": 0.5953640132668604,
+        "zScore": -0.4624583035479243,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-8u-s23gc",
+        "date": "2025-04-22",
+        "merchant": "GadgetHub Electronics",
+        "description": "POS 446532314 GADGETHUB ELECTRONICS HSR LAYOUT APP",
+        "category": "Shopping",
+        "amount": 5971,
+        "score": 0.5868494944201392,
+        "zScore": 0.1206045833537105,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-kb-5qvooz",
+        "date": "2025-10-23",
+        "merchant": "RailConnect Booking",
+        "description": "UPI/DR/408627875/RAILCONNECT BOOKING/BANASHANKARI/APP",
+        "category": "Travel",
+        "amount": 1508,
+        "score": 0.5738771606027011,
+        "zScore": -0.527557108789607,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-58-9jfm3m",
+        "date": "2025-02-16",
+        "merchant": "City Clinic Labs",
+        "description": "POS 491198431 CITY CLINIC LABS MARATHAHALLI TID",
+        "category": "Healthcare",
+        "amount": 2421,
+        "score": 0.561770163349123,
+        "zScore": 0.007096949097070231,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-3f-1o561x",
+        "date": "2025-01-01",
+        "merchant": "SkyFare Airways",
+        "description": "POS 417110777 SKYFARE AIRWAYS INDIRANAGAR TRM",
+        "category": "Travel",
+        "amount": 6652,
+        "score": 0.5589741743172311,
+        "zScore": 0.18644769752855084,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-ar-2et7pc",
+        "date": "2025-05-18",
+        "merchant": "StayEasy Hotels",
+        "description": "POS 447550032 STAYEASY HOTELS WHITEFIELD QR",
+        "category": "Travel",
+        "amount": 2802,
+        "score": 0.5229946257159758,
+        "zScore": -0.3479454798285463,
+        "reasons": [
+          "Rare merchant - only 2 transactions on record"
+        ]
+      },
+      {
+        "id": "sample-d-7a34jl",
+        "date": "2024-12-15",
+        "merchant": "SafeGuard Insurance",
+        "description": "PREMIUM/SAFEGUARD INSURANCE/HEALTH",
+        "category": "Healthcare",
+        "amount": 6200,
+        "score": 0.5148331793593397,
+        "zScore": 0.911934015150664,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-ck-7r5tf8",
+        "date": "2025-06-14",
+        "merchant": "PaperTrail Books",
+        "description": "UPI/DR/445113135/PAPERTRAIL BOOKS/BANASHANKARI/QR",
+        "category": "Education",
+        "amount": 649,
+        "score": 0.49380761830354786,
+        "zScore": -1.0583940927521682,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-5a-6a7h77",
+        "date": "2025-02-15",
+        "merchant": "SkyFare Airways",
+        "description": "POS 444046294 SKYFARE AIRWAYS BANASHANKARI TRM",
+        "category": "Travel",
+        "amount": 8406,
+        "score": 0.4927225901605838,
+        "zScore": 0.4299089009270829,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-ge-868vha",
+        "date": "2025-08-01",
+        "merchant": "RailConnect Booking",
+        "description": "UPI/DR/439316482/RAILCONNECT BOOKING/YELAHANKA/QR",
+        "category": "Travel",
+        "amount": 1310,
+        "score": 0.48424589090783865,
+        "zScore": -0.5550401864822577,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-5b-2xycdd",
+        "date": "2025-02-02",
+        "merchant": "RailConnect Booking",
+        "description": "UPI/DR/401502995/RAILCONNECT BOOKING/JAYANAGAR/TRM",
+        "category": "Travel",
+        "amount": 956,
+        "score": 0.4773217780326176,
+        "zScore": -0.6041765981145726,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-4-8la38w",
+        "date": "2024-12-03",
+        "merchant": "Greenleaf Properties",
+        "description": "NACH/RENT/GREENLEAF PROPERTIES",
+        "category": "Rent",
+        "amount": 24000,
+        "score": 0.4725328174679563,
+        "zScore": 0,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-3a-6qaisj",
+        "date": "2025-01-27",
+        "merchant": "MegaMart Online",
+        "description": "POS 445479846 MEGAMART ONLINE JAYANAGAR APP",
+        "category": "Shopping",
+        "amount": 1761,
+        "score": 0.46358852806212125,
+        "zScore": -0.34943047158622914,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-3e-c2p6st",
+        "date": "2025-01-28",
+        "merchant": "SkillForge Academy",
+        "description": "POS 495165044 SKILLFORGE ACADEMY YELAHANKA APP",
+        "category": "Education",
+        "amount": 2063,
+        "score": 0.4631079890061621,
+        "zScore": 0.1841736070899953,
+        "reasons": [
+          "Combination of amount, timing and merchant differs from your usual pattern"
+        ]
+      },
+      {
+        "id": "sample-8r-21uiuz",
+        "date": "2025-04-06",
+        "merchant": "PetroMax Fuel",
+        "description": "POS 417992620 PETROMAX FUEL MARATHAHALLI QR",
+        "category": "Transportation",
+        "amount": 2273,
+        "score": 0.4596196071334173,
+        "zScore": 2.9046644886953805,
+        "reasons": [
+          "2273 is 2.9 standard deviations above the Transportation average of 369",
+          "Large weekend spend compared with your weekday pattern"
+        ]
+      }
+    ],
+    "features": [
+      "log(amount)",
+      "amount z-score within category",
+      "day of week",
+      "day of month",
+      "log(merchant frequency)",
+      "days since last charge at merchant"
+    ],
+    "disclaimer": "An unusual transaction is not proof of fraud. These are statistical outliers for you to review.",
+    "seed": 42
+  },
+  "anomalyQuality": {
+    "plantedTotal": 6,
+    "plantedCaught": 6,
+    "rentRows": 11,
+    "rentFlagged": 1
+  }
+}
